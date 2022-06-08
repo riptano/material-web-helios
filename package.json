@@ -1,0 +1,39 @@
+{
+  "name": "material-web-helios",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riptano/material-web-helios.git"
+  },
+  "author": "Datastax",
+  "license": "ISC",
+  "dependencies": {
+    "@material/button": "^14.0.0",
+    "@material/list": "^14.0.0",
+    "@material/tab": "^14.0.0",
+    "@material/textfield": "^14.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/material-components-web": "^1.0.0",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "dart-sass": "^1.25.0",
+    "extract-loader": "^5.1.0",
+    "file-loader": "^6.2.0",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.2"
+  }
+}
