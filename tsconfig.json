@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-      "outDir": "dist/",
+      "outDir": "types/",
       "noImplicitAny": true,
       "module": "commonjs",
       "target": "esnext",
       "jsx": "react"
     },
     "include": [
-      "./**/*"
+      "./index.ts"
     ]
   }

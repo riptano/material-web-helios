@@ -1,0 +1,21 @@
+@import "@material/button/mdc-button";
+@import "./theme";
+
+.helios-button {
+  @include mdc-button-filled-accessible($color-fill-primary);
+  @include mdc-button-shape-radius($size-border-radius-6);
+  text-transform: none;
+
+  &.failure {
+    @include mdc-button-filled-accessible($color-fill-failure);
+  }
+  &.caution {
+    @include mdc-button-filled-accessible($color-fill-caution);
+  }
+  &.success {
+    @include mdc-button-filled-accessible($color-fill-success);
+  }
+  &:disabled {
+    @include mdc-button-filled-accessible($color-fill-disabled);
+  }
+}
