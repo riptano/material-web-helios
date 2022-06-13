@@ -1,21 +1,82 @@
-@import "@material/button/mdc-button";
-@import "./theme";
+@use "./helios";
+@use "./theme";
+@use "./typography";
+@use "@material/button";
+@use "@material/button/styles";
+@use "sass:map";
+
+$states: (
+  "default": (
+    color: helios.$color-fill-primary,
+    hover: helios.$foundation-blue-700,
+  ),
+  "failure": (
+    color: helios.$color-fill-failure,
+    hover: helios.$foundation-red-700,
+  ),
+  "caution": (
+    color: helios.$color-fill-caution,
+    hover: helios.$foundation-yellow-700,
+  ),
+  "success": (
+    color: helios.$color-fill-success,
+    hover: helios.$foundation-green-700,
+  ),
+);
 
 .helios-button {
-  @include mdc-button-filled-accessible($color-fill-primary);
-  @include mdc-button-shape-radius($size-border-radius-6);
-  text-transform: none;
+  @include button.shape-radius(helios.$size-border-radius-6);
+  @include button.height(40px);
+  --mdc-typography-button-font-size: 16px;
+  --mdc-typography-button-font-weight: 500;
+  --mdc-typography-button-text-transform: none;
+  --mdc-typography-button-letter-spacing: normal;
 
-  &.failure {
-    @include mdc-button-filled-accessible($color-fill-failure);
+  padding: helios.$spacing-space01 helios.$spacing-space01h;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  &:focus-visible {
+    outline: 2px solid helios.$color-border-focus;
+    outline-offset: 1px;
   }
-  &.caution {
-    @include mdc-button-filled-accessible($color-fill-caution);
+
+  &.small {
+    @include button.height(26px);
+    padding: helios.$spacing-spaceq helios.$spacing-space01;
+    --mdc-typography-button-font-size: 12px;
+    --mdc-typography-button-font-weight: 700;
   }
-  &.success {
-    @include mdc-button-filled-accessible($color-fill-success);
-  }
-  &:disabled {
-    @include mdc-button-filled-accessible($color-fill-disabled);
+
+  @each $intent, $style in $states {
+    @if $intent == "default" {
+      @include button.filled-accessible(map.get($style, color));
+      &:hover:not(.subtle) {
+        background-color: map.get($style, hover);
+      }
+      &.subtle {
+        @include button.filled-accessible(helios.$color-background-secondary);
+        --mdc-theme-text-primary-on-light: #{map.get($style, color)};
+        &:hover {
+          color: map.get($style, hover);
+        }
+      }
+    } @else {
+      &.#{$intent} {
+        @include button.filled-accessible(map.get($style, color));
+        &:hover:not(.subtle) {
+          background-color: map.get($style, hover);
+        }
+        &.subtle {
+          @include button.filled-accessible(helios.$color-background-secondary);
+          --mdc-theme-text-primary-on-light: #{map.get($style, color)};
+          &:hover {
+            color: map.get($style, hover);
+          }
+        }
+      }
+    }
   }
 }

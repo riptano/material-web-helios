@@ -14,30 +14,53 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
     />
     <link rel="stylesheet" href="bundle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
   </head>
 
   <body>
     <div>
       <h2>Button</h2>
-      <button class="helios-button mdc-button">
-        <span class="mdc-button__focus-ring"></span>
+      <button class="mdc-button helios-button">
         <span class="mdc-button__label">Helios Button</span>
       </button>
-      <button class="helios-button mdc-button" disabled>
-        <span class="mdc-button__focus-ring"></span>
+      <button class="mdc-button helios-button" disabled>
         <span class="mdc-button__label">Disabled</span>
       </button>
       <button class="helios-button failure mdc-button">
-        <span class="mdc-button__focus-ring"></span>
         <span class="mdc-button__label">Failure</span>
       </button>
       <button class="helios-button caution mdc-button">
-        <span class="mdc-button__focus-ring"></span>
         <span class="mdc-button__label">Caution</span>
       </button>
       <button class="helios-button success mdc-button">
-        <span class="mdc-button__focus-ring"></span>
         <span class="mdc-button__label">Success</span>
+      </button>
+      <button class="mdc-button helios-button small">
+        <span class="mdc-button__label">Small Button</span>
+      </button>
+      <button class="helios-button mdc-button mdc-button--leading">
+        <i class="material-icons mdc-button__icon" aria-hidden="true"
+        >bookmark</i
+      >
+        <span class="mdc-button__label">Leading Icon</span>
+      </button>
+      <button class="helios-button mdc-button mdc-button--trailing">
+        <span class="mdc-button__label">Trailing Icon</span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true"
+        >bookmark</i
+      >
+      </button>
+      <button class="helios-button mdc-button subtle mdc-button--trailing">
+        <span class="mdc-button__label">Trailing Icon</span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true"
+        >bookmark</i
+      >
+      </button>
+      <button class="mdc-button subtle helios-button">
+        <span class="mdc-button__label">Subtle</span>
+      </button>
+      <button class="mdc-button subtle failure helios-button">
+        <span class="mdc-button__label">Subtle Failure</span>
       </button>
 
     <script src="bundle.js" async></script>

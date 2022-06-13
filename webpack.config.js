@@ -1,7 +1,7 @@
 module.exports = [
   {
     mode: "development",
-    entry: "./index.scss",
+    entry: "./_index.scss",
     output: {
       // This is necessary for webpack to compile
       // But we never use style-bundle.js

@@ -1,0 +1,26 @@
+@use "./helios";
+@use "sass:map";
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+$font-sizes: (
+  "300": 12,
+  "400": 14,
+  "500": 16,
+  "600": 20,
+  "700": 24,
+  "800": 28,
+  "900": 34,
+  "1000": 40,
+  "1100": 48,
+);
+
+@mixin text($size, $weight) {
+  font-size: map.get($font-sizes, $size);
+  font-weight: map.get($font-weights, $weight);
+  font-style: normal;
+  letter-spacing: normal;
+}
