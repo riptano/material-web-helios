@@ -1,0 +1,31 @@
+@use "./helios";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto";
+  margin: 0;
+  padding-top: 0.1px; // Prevent header h1 margin from pushing body down
+  color: helios.$color-text-primary;
+  background-color: helios.$color-background-primary;
+}
+
+.content {
+  padding: 24px;
+}
+
+.section {
+  & > button {
+    margin: 8px;
+  }
+  & > label {
+    margin-bottom: 12px;
+  }
+  & > label + .mdc-text-field-helper-line {
+    margin-top: -12px;
+    margin-bottom: 12px;
+  }
+}

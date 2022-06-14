@@ -14,55 +14,215 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
     />
     <link rel="stylesheet" href="bundle.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
 
   <body>
-    <div>
+    <div class="content">
+      <h1>Material Web Components Styled with Helios</h1>
+      
       <h2>Button</h2>
-      <button class="mdc-button helios-button">
-        <span class="mdc-button__label">Helios Button</span>
-      </button>
-      <button class="mdc-button helios-button" disabled>
-        <span class="mdc-button__label">Disabled</span>
-      </button>
-      <button class="helios-button failure mdc-button">
-        <span class="mdc-button__label">Failure</span>
-      </button>
-      <button class="helios-button caution mdc-button">
-        <span class="mdc-button__label">Caution</span>
-      </button>
-      <button class="helios-button success mdc-button">
-        <span class="mdc-button__label">Success</span>
-      </button>
-      <button class="mdc-button helios-button small">
-        <span class="mdc-button__label">Small Button</span>
-      </button>
-      <button class="helios-button mdc-button mdc-button--leading">
-        <i class="material-icons mdc-button__icon" aria-hidden="true"
-        >bookmark</i
-      >
-        <span class="mdc-button__label">Leading Icon</span>
-      </button>
-      <button class="helios-button mdc-button mdc-button--trailing">
-        <span class="mdc-button__label">Trailing Icon</span>
-        <i class="material-icons mdc-button__icon" aria-hidden="true"
-        >bookmark</i
-      >
-      </button>
-      <button class="helios-button mdc-button subtle mdc-button--trailing">
-        <span class="mdc-button__label">Trailing Icon</span>
-        <i class="material-icons mdc-button__icon" aria-hidden="true"
-        >bookmark</i
-      >
-      </button>
-      <button class="mdc-button subtle helios-button">
-        <span class="mdc-button__label">Subtle</span>
-      </button>
-      <button class="mdc-button subtle failure helios-button">
-        <span class="mdc-button__label">Subtle Failure</span>
-      </button>
+      <div class="section">
+        <button class="helios-button mdc-button">
+          <span class="mdc-button__label">Default</span>
+        </button>
 
+        <button class="helios-button mdc-button" disabled>
+          <span class="mdc-button__label">Disabled</span>
+        </button>
+
+        <button class="helios-button failure mdc-button">
+          <span class="mdc-button__label">Failure</span>
+        </button>
+
+        <button class="helios-button caution mdc-button">
+          <span class="mdc-button__label">Caution</span>
+        </button>
+
+        <button class="helios-button success mdc-button">
+          <span class="mdc-button__label">Success</span>
+        </button>
+
+        <button class="helios-button small mdc-button">
+          <span class="mdc-button__label">Small</span>
+        </button>
+
+        <button class="helios-button mdc-button mdc-button--leading">
+          <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+          <span class="mdc-button__label">Leading Icon</span>
+        </button>
+
+        <button class="helios-button mdc-button mdc-button--trailing">
+          <span class="mdc-button__label">Trailing Icon</span>
+          <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+        </button>
+
+        <button class="helios-button mdc-button subtle mdc-button--trailing">
+          <span class="mdc-button__label">Trailing Icon Subtle</span>
+          <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+        </button>
+
+        <button class="subtle helios-button mdc-button ">
+          <span class="mdc-button__label">Subtle</span>
+        </button>
+
+        <button class="mdc-button subtle failure helios-button">
+          <span class="mdc-button__label">Subtle Failure</span>
+        </button>
+
+        <button class="mdc-button helios-button text">
+          <span class="mdc-button__label">Text</span>
+        </button>
+
+        <button class="mdc-button helios-button text failure">
+          <span class="mdc-button__label">Text Failure</span>
+        </button>
+      </div>
+
+      <h2>Textfield</h2>
+      <div class="section">
+        <label class="helios-text-field mdc-text-field">
+          <span class="helios-text-field-label" id="my-label-id-0">With Label</span>
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-0"
+            />
+          </span>
+        </label>
+
+        <label class="helios-text-field mdc-text-field">
+          <span class="helios-text-field-label" id="my-label-id-1"
+            >With Leading Icon</span
+          >
+          <span class="helios-text-field-outline">
+            <i
+              class="material-icons mdc-text-field__icon mdc-text-field__icon--leading"
+              >event</i
+            >
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-1"
+            />
+          </span>
+        </label>
+
+        <label class="helios-text-field mdc-text-field">
+          <span class="helios-text-field-label" id="my-label-id-2"
+            >With Trailing Icon</span
+          >
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-2"
+            />
+            <i
+              class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
+              >event</i
+            >
+          </span>
+        </label>
+
+        <label class="helios-text-field mdc-text-field mdc-text-field--disabled">
+          <span class="helios-text-field-label" id="my-label-id-3">Disabled</span>
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-3"
+              disabled
+            />
+          </span>
+        </label>
+
+        <label class="helios-text-field mdc-text-field mdc-text-field--no-label">
+          <span class="helios-text-field-label" id="my-label-id-4">Placeholder</span>
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-4"
+              placeholder="The Placeholder Text"
+            />
+          </span>
+        </label>
+
+        <label class="helios-text-field mdc-text-field mdc-text-field--invalid">
+          <span class="helios-text-field-label" id="my-label-id-5">Invalid (Error)</span>
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-5"
+              required
+              minlength="8"
+            />
+          </span>
+        </label>
+
+        <label class="helios-text-field mdc-text-field">
+          <span class="helios-text-field-label" id="my-label-id-6">Helper Text</span>
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-controls="my-helper-id"
+              aria-labelledby="my-label-id-6"
+              aria-describedby="my-helper-id"
+            />
+          </span>
+        </label>
+        <div class="mdc-text-field-helper-line">
+          <div class="helios-text-field-helper-text mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">The Helper Text</div>
+        </div>
+
+        <label class="helios-text-field mdc-text-field">
+          <span class="helios-text-field-label" id="my-label-id-7">Persistent Helper Text</span>
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-7"
+              aria-describedby="my-helper-id"
+            />
+          </span>
+        </label>
+        <div class="mdc-text-field-helper-line">
+          <div class="helios-text-field-helper-text mdc-text-field-helper-text mdc-text-field-helper-text--persistent" id="my-helper-id" aria-hidden="true">The Helper Text</div>
+        </div>
+
+        <label class="helios-text-field mdc-text-field mdc-text-field--invalid">
+          <span class="helios-text-field-label" id="my-label-id-8">Validation Helper Text</span>
+          <span class="helios-text-field-outline">
+            <input
+              type="text"
+              class="mdc-text-field__input"
+              aria-labelledby="my-label-id-8"
+              aria-describedby="my-helper-id"
+              required
+            />
+          </span>
+        </label>
+        <div class="mdc-text-field-helper-line">
+          <div class="helios-text-field-helper-text mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg" id="my-helper-id" aria-hidden="true">Describe the Error</div>
+        </div>
+
+        <label class="helios-text-field mdc-text-field mdc-text-field--textarea">
+          <span class="helios-text-field-label" id="my-label-id-9">Multiline</span>
+          <span class="helios-text-field-outline">
+            <textarea class="mdc-text-field__input resizable" aria-labelledby="my-label-id-9" rows="4"
+              cols="40"></textarea>
+          </span>
+        </label>
+
+      </div>
     <script src="bundle.js" async></script>
   </body>
 </html>
