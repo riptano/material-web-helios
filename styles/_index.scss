@@ -3,6 +3,7 @@
 @use "./textfield";
 @use "./card";
 @use "@material/switch/styles";
-@import url("./helios-dark.css");
-@import url("./helios-light.css");
-@import url("./mdc-theme.css");
+@import "./helios-dark.css";
+@import "./helios-light.css";
+@import "./helios-shared.css";
+@import "./mdc-theme.css";
