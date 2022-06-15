@@ -1,5 +1,3 @@
-@use "./helios";
-@use "./theme";
 @use "./typography";
 @use "@material/textfield";
 @use "@material/textfield/helper-text";
@@ -8,18 +6,18 @@
 @include helper-text.helper-text-core-styles;
 
 .helios-text-field {
-  @include helper-text.helper-text-validation-color(helios.$color-text-failure);
-  @include textfield.ink-color(helios.$color-text-primary);
-  @include textfield.placeholder-color(helios.$color-text-disabled);
-  @include textfield.caret-color(helios.$color-text-primary);
-  @include textfield.prefix-color(helios.$color-text-secondary);
-  @include helper-text.helper-text-color(helios.$color-text-secondary);
-  @include textfield.suffix-color(helios.$color-text-secondary);
-  @include textfield.disabled-ink-color(helios.$color-text-disabled);
-  @include textfield.disabled-placeholder-color(helios.$color-text-disabled);
-  @include textfield.disabled-prefix-color(helios.$color-text-disabled);
-  @include textfield.disabled-suffix-color(helios.$color-text-disabled);
-  @include helper-text.disabled-helper-text-color(helios.$color-text-disabled);
+  @include helper-text.helper-text-validation-color(var(--color-text-failure));
+  @include textfield.ink-color(var(--color-text-primary));
+  @include textfield.placeholder-color(var(--color-text-disabled));
+  @include textfield.caret-color(var(--color-text-primary));
+  @include textfield.prefix-color(var(--color-text-secondary));
+  @include helper-text.helper-text-color(var(--color-text-secondary));
+  @include textfield.suffix-color(var(--color-text-secondary));
+  @include textfield.disabled-ink-color(var(--color-text-disabled));
+  @include textfield.disabled-placeholder-color(var(--color-text-disabled));
+  @include textfield.disabled-prefix-color(var(--color-text-disabled));
+  @include textfield.disabled-suffix-color(var(--color-text-disabled));
+  @include helper-text.disabled-helper-text-color(var(--color-text-disabled));
 
   display: block;
   padding: 0;
@@ -37,7 +35,7 @@
     margin: 0;
     padding: 0;
     &:not(.mdc-text-field--disabled) {
-      color: helios.$color-text-secondary;
+      color: var(--color-text-secondary);
     }
   }
   .mdc-text-field__icon--leading {
@@ -50,32 +48,32 @@
   &.mdc-text-field--focused {
     .helios-text-field-outline {
       border-color: transparent;
-      outline: 2px solid helios.$color-border-focus;
+      outline: 2px solid var(--color-border-focus);
       outline-offset: -1px;
     }
   }
 
   &.mdc-text-field--disabled {
     .helios-text-field-outline {
-      background: helios.$color-fill-disabled;
-      border-color: helios.$color-border-disabled;
+      background: var(--color-fill-disabled);
+      border-color: var(--color-border-disabled);
       &:hover {
-        border-color: helios.$color-border-disabled;
+        border-color: var(--color-border-disabled);
       }
     }
     .helios-text-field-label {
-      color: helios.$color-text-disabled;
+      color: var(--color-text-disabled);
     }
   }
 
   &.mdc-text-field--invalid {
     .helios-text-field-outline {
       border-color: transparent;
-      outline: 2px solid helios.$color-border-failure;
+      outline: 2px solid var(--color-border-failure);
       outline-offset: -1px;
     }
     .helios-text-field-label {
-      color: helios.$color-text-failure;
+      color: var(--color-text-failure);
     }
   }
   &.mdc-text-field--textarea {
@@ -91,18 +89,18 @@
 .helios-text-field-outline {
   display: flex;
   align-items: center;
-  border: 1px solid helios.$color-border-primary;
+  border: 1px solid var(--color-border-primary);
   border-radius: 4px;
   &:hover {
-    border-color: helios.$color-border-hover;
+    border-color: var(--color-border-hover);
   }
 }
 
 .helios-text-field-label {
   @include typography.text(300, bold);
   display: block;
-  color: helios.$color-text-secondary;
-  margin-bottom: helios.$spacing-spaceh;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-spaceh);
 }
 
 .helios-text-field-helper-text {

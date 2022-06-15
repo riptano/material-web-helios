@@ -1,0 +1,11 @@
+.mdc-switch {
+  --mdc-theme-primary: var(--color-fill-primary);
+  --mdc-theme-secondary: var(--color-fill-secondary);
+  --mdc-theme-background: var(--color-background-primary);
+  --mdc-theme-surface: var(--color-background-secondary);
+  --mdc-theme-error: var(--color-fill-failure);
+  --mdc-theme-on-primary: var(--color-text-inverse);
+  --mdc-theme-on-secondary: var(--color-text-primary);
+  --mdc-theme-on-surface: var(--color-text-primary);
+  --mdc-theme-on-error: var(--color-text-primary);
+}

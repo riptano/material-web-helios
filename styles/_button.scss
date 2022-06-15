@@ -1,5 +1,3 @@
-@use "./helios";
-@use "./theme";
 @use "./typography";
 @use "@material/button";
 @use "@material/button/styles";
@@ -7,23 +5,26 @@
 
 $intents: (
   "failure": (
-    color: helios.$color-fill-failure,
-    hover: helios.$foundation-red-700,
+    subtle: var(--color-fill-failure),
+    color: var(--foundation-red-500),
+    hover: var(--foundation-red-700),
   ),
   "caution": (
-    color: helios.$color-fill-caution,
-    hover: helios.$foundation-yellow-700,
+    subtle: var(--color-fill-caution),
+    color: var(--foundation-yellow-500),
+    hover: var(--foundation-yellow-700),
   ),
   "success": (
-    color: helios.$color-fill-success,
-    hover: helios.$foundation-green-700,
+    subtle: var(--color-fill-success),
+    color: var(--foundation-green-500),
+    hover: var(--foundation-green-700),
   ),
 );
 
 .helios-button {
-  @include button.shape-radius(helios.$size-border-radius-6);
+  @include button.shape-radius(6px);
   @include button.height(40px);
-  @include button.horizontal-padding(helios.$spacing-space01h);
+  @include button.horizontal-padding(var(--spacing-space01h));
   --mdc-typography-button-font-size: 16px;
   --mdc-typography-button-font-weight: 500;
   --mdc-typography-button-text-transform: none;
@@ -33,48 +34,58 @@ $intents: (
     color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
   &:focus-visible {
-    outline: 2px solid helios.$color-border-focus;
+    outline: 2px solid var(--color-border-focus);
     outline-offset: 1px;
   }
 
   &.small {
     @include button.height(26px);
-    @include button.horizontal-padding(helios.$spacing-space01);
+    @include button.horizontal-padding(var(--spacing-space01));
     --mdc-typography-button-font-size: 12px;
     --mdc-typography-button-font-weight: 700;
   }
 
-  &:not(.subtle, .text) {
-    @include button.filled-accessible(helios.$color-fill-primary);
+  &:not(.subtle, .text, :disabled) {
+    background-color: var(--foundation-blue-500);
+    color: var(--foundation-white);
     &:hover {
-      background-color: helios.$foundation-blue-700;
+      background-color: var(--foundation-blue-700);
     }
   }
   &.subtle {
-    @include button.filled-accessible(helios.$color-background-secondary);
-    --mdc-theme-text-primary-on-light: #{helios.$color-fill-primary};
-    --mdc-theme-text-primary-on-dark: #{helios.$color-fill-primary};
+    background-color: var(--color-background-secondary);
+    --mdc-theme-primary: var(--color-fill-primary);
+  }
+  &:disabled {
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-disabled);
+    &.text {
+      background-color: unset;
+    }
+  }
+  &.text {
+    --mdc-theme-primary: var(--color-fill-primary);
   }
   &.text:hover,
   &.subtle:hover {
-    color: helios.$foundation-blue-700;
+    color: var(--foundation-blue-700);
   }
 
   @each $intent, $style in $intents {
     &.#{$intent} {
-      &:not(.subtle, .text) {
-        @include button.filled-accessible(map.get($style, color));
+      &:not(.subtle, .text, :disabled) {
+        background-color: map.get($style, color);
+        color: var(--foundation-white);
         &:hover {
           background-color: map.get($style, hover);
         }
       }
       &.subtle {
-        @include button.filled-accessible(helios.$color-background-secondary);
-        --mdc-theme-text-primary-on-light: #{map.get($style, color)};
-        --mdc-theme-text-primary-on-dark: #{map.get($style, color)};
+        background-color: var(--color-background-secondary);
+        --mdc-theme-primary: #{map.get($style, subtle)};
       }
       &.text {
-        --mdc-theme-primary: #{map.get($style, color)};
+        --mdc-theme-primary: #{map.get($style, subtle)};
       }
       &.text:hover,
       &.subtle:hover {

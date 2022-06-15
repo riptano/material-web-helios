@@ -13,8 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "@material/button": "^14.0.0",
+    "@material/card": "^14.0.0",
     "@material/list": "^14.0.0",
     "@material/shape": "^14.0.0",
+    "@material/switch": "^14.0.0",
     "@material/tab": "^14.0.0",
     "@material/textfield": "^14.0.0",
     "@material/theme": "^14.0.0",

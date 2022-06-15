@@ -13,17 +13,30 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
     />
+    <!-- <link rel="stylesheet" href="styles/helios-light.css" />
+    <link rel="stylesheet" href="styles/helios-dark.css" /> -->
     <link rel="stylesheet" href="bundle.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
 
   <body>
     <div class="content">
       <h1>Material Web Components Styled with Helios</h1>
+
+      <button id="theme-switch" class="mdc-switch mdc-switch--unselected" type="button" role="switch" aria-checked="false">
+        <div class="mdc-switch__track"></div>
+        <div class="mdc-switch__handle-track">
+          <div class="mdc-switch__handle">
+            <div class="mdc-switch__shadow">
+              <div class="mdc-elevation-overlay"></div>
+            </div>
+            <div class="mdc-switch__ripple"></div>
+          </div>
+        </div>
+      </button>
       
       <h2>Button</h2>
       <div class="section">
@@ -48,7 +61,7 @@
         </button>
 
         <button class="helios-button small mdc-button">
-          <span class="mdc-button__label">Small</span>
+          <span class="mdc-button__label">Small Default</span>
         </button>
 
         <button class="helios-button mdc-button mdc-button--leading">
@@ -80,6 +93,10 @@
 
         <button class="mdc-button helios-button text failure">
           <span class="mdc-button__label">Text Failure</span>
+        </button>
+
+        <button class="mdc-button helios-button text failure" disabled>
+          <span class="mdc-button__label">Text Disabled</span>
         </button>
       </div>
 
@@ -221,7 +238,25 @@
               cols="40"></textarea>
           </span>
         </label>
+      </div>
 
+      <h2>Card</h2>
+      <div class="section">
+        <div class="helios-card mdc-card"><span class="mdc-card__content">Elevated Card</span></div>
+
+        <div class="helios-card mdc-card mdc-card--outlined"><span class="mdc-card__content">Outlined Card</span></div>
+
+        <div class="helios-card mdc-card">
+          <span class="mdc-card__content">Card With Actions</span>
+          <div class="mdc-card__actions">
+            <button class="helios-button mdc-button mdc-card__action mdc-card__action--button">
+              <span class="mdc-button__label">Action 1</span>
+            </button>
+            <button class="helios-button success mdc-button mdc-card__action mdc-card__action--button">
+              <span class="mdc-button__label">Action 2</span>
+            </button>
+          </div>
+        </div>
       </div>
     <script src="bundle.js" async></script>
   </body>
